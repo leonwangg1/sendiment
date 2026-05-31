@@ -1,0 +1,374 @@
+{
+  "summary": {
+    "baseline": 0.6511111111111111,
+    "sediment": 0.8457407407407408,
+    "delta": 0.1946296296296297,
+    "by_family": {
+      "baseline": {
+        "model_delimiters": 0.5,
+        "json_verification": 0.5,
+        "few_shot_concrete": 0.9533333333333334
+      },
+      "sediment": {
+        "model_delimiters": 0.7638888888888888,
+        "json_verification": 0.7733333333333333,
+        "few_shot_concrete": 1.0
+      }
+    }
+  },
+  "baseline": [
+    {
+      "task": "f1-1",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "notes": "The response clearly defines Claude's role and specifies all three required sections, but uses markdown-style delimiters (**DECISIONS:**) instead of XML-style tags (<decisions>)."
+    },
+    {
+      "task": "f1-2",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "notes": "The response uses plain text headers (PEOPLE:, ORGANIZATIONS:, LOCATIONS:) rather than XML-style delimiters, but clearly defines the extraction task and specifies all three required categories."
+    },
+    {
+      "task": "f1-3",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "notes": "Uses markdown headers (##) instead of XML-style delimiters, but clearly defines code reviewer role and specifies all three severity levels with detailed classification."
+    },
+    {
+      "task": "f2-1",
+      "family": "json_verification",
+      "weighted": 0.5,
+      "notes": "Specifies all four fields with types clearly defined; lacks any self-verification step before responding; explicitly handles missing data with null values and defaults."
+    },
+    {
+      "task": "f2-2",
+      "family": "json_verification",
+      "weighted": 0.5,
+      "notes": "Specifies all four fields with clear schema (1.0), lacks any self-verification step before output (0.0), constrains category/urgency/sentiment with enums (1.0)"
+    },
+    {
+      "task": "f2-3",
+      "family": "json_verification",
+      "weighted": 0.5,
+      "notes": "The prompt clearly specifies the nested JSON schema with all required fields and structure, and properly handles the nested follow_up_items with owner and due_date fields, but lacks any self-verification step before output."
+    },
+    {
+      "task": "f3-1",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "notes": "The response includes 6 fully-realized examples with concrete review text and labels, covering all 3 classes (positive, negative, and neutral)."
+    },
+    {
+      "task": "f3-2",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "notes": "The response includes 7 fully-realized examples with natural language questions and corresponding SQL queries, and demonstrates filtering (WHERE clauses) plus multiple other operations including COUNT, GROUP BY, ORDER BY, and LIMIT."
+    },
+    {
+      "task": "f3-3",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "notes": "The response includes 12 fully-realized examples with actual text and correct ISO 639-1 codes, and covers 12 different languages (English, French, Spanish, German, Italian, Portuguese, Russian, Japanese, Chinese, Korean, Turkish, Swedish)."
+    },
+    {
+      "task": "f1-1",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "notes": "The response clearly defines Claude's role and specifies all three required sections, but uses markdown-style delimiters (**DECISIONS**) instead of XML-style tags (<decisions>), failing the first criterion."
+    },
+    {
+      "task": "f1-2",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "notes": "Uses JSON structure instead of XML-style delimiters (criterion 1 not met), but clearly defines extraction task and specifies all three required categories."
+    },
+    {
+      "task": "f1-3",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "notes": "Response uses Markdown headers (##) instead of XML-style delimiters, but correctly defines code reviewer role and specifies all three severity levels with clear definitions."
+    },
+    {
+      "task": "f2-1",
+      "family": "json_verification",
+      "weighted": 0.5,
+      "notes": "Specifies all four JSON fields with clear schema; handles missing data with explicit defaults; lacks self-verification step before responding."
+    },
+    {
+      "task": "f2-2",
+      "family": "json_verification",
+      "weighted": 0.5,
+      "notes": "The prompt specifies all four required JSON fields with clear structure, provides excellent constraints with enums for category/urgency/sentiment, but lacks any self-verification step before output."
+    },
+    {
+      "task": "f2-3",
+      "family": "json_verification",
+      "weighted": 0.5,
+      "notes": "The prompt correctly specifies the nested JSON schema with all required fields and structure, properly handles the nested follow_up_items with owner and due_date fields, but lacks any self-verification step before output."
+    },
+    {
+      "task": "f3-1",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "notes": "The response includes 6 fully-realized examples with actual review text and labels, and covers all 3 classes (positive, negative, and neutral)."
+    },
+    {
+      "task": "f3-2",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "notes": "The response includes 10 fully-realized examples with natural language questions and corresponding SQL queries, far exceeding the requirement of 2 examples. The examples demonstrate filtering (WHERE clauses in multiple examples) plus several other SQL operations including COUNT, GROUP BY, LIKE, ORDER BY, LIMIT, and DISTINCT."
+    },
+    {
+      "task": "f3-3",
+      "family": "few_shot_concrete",
+      "weighted": 0.58,
+      "notes": "The response includes 12 fully-realized examples with actual text and correct ISO 639-1 codes (criterion 1 fully met), and covers 12 different languages including English, French, Spanish, German, Italian, Portuguese, Russian, Japanese, Chinese, Arabic, Swedish, and Polish (criterion 2 fully met)."
+    },
+    {
+      "task": "f1-1",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "notes": "The response clearly defines Claude's role as a meeting notes summarizer and specifies all three required sections, but uses markdown-style delimiters (**DECISIONS:**) instead of XML-style tags (<decisions>), failing the first criterion."
+    },
+    {
+      "task": "f1-2",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "notes": "Response uses plain text headers (PEOPLE:, ORGANIZATIONS:, LOCATIONS:) instead of XML-style delimiters like <people></people>, but clearly defines the extraction task and specifies all three required categories."
+    },
+    {
+      "task": "f1-3",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "notes": "Response uses Markdown headers (##) instead of XML-style delimiters, but correctly defines a code reviewer role and specifies all three severity levels."
+    },
+    {
+      "task": "f2-1",
+      "family": "json_verification",
+      "weighted": 0.5,
+      "notes": "Specifies exact JSON schema with all four fields clearly defined; lacks any self-verification step before responding; explicitly handles missing data with null values and defaults."
+    },
+    {
+      "task": "f2-2",
+      "family": "json_verification",
+      "weighted": 0.5,
+      "notes": "Specifies exact JSON schema with all four fields and constrains values with enums, but lacks any self-verification step before output."
+    },
+    {
+      "task": "f2-3",
+      "family": "json_verification",
+      "weighted": 0.5,
+      "notes": "The prompt correctly specifies the nested JSON schema with all required fields and structure, properly handles the nested follow_up_items with owner and due_date, but lacks any self-verification step before output."
+    },
+    {
+      "task": "f3-1",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "notes": "The response includes 6 fully-realized examples with actual review text and labels, and covers all 3 classes (positive, negative, and neutral)."
+    },
+    {
+      "task": "f3-2",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "notes": "The response includes 9 fully-realized examples with natural language questions and corresponding SQL queries, far exceeding the requirement of 2. The examples demonstrate filtering (WHERE clauses in multiple examples) plus other SQL operations including COUNT, DISTINCT, LIKE, ORDER BY, LIMIT, GROUP BY, and BETWEEN."
+    },
+    {
+      "task": "f3-3",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "notes": "The response includes 12 fully-realized examples with actual text and correct ISO 639-1 codes, and covers 12 different languages (English, French, Spanish, German, Italian, Portuguese, Russian, Japanese, Chinese, Korean, Turkish, Swedish)."
+    }
+  ],
+  "sediment": [
+    {
+      "task": "f1-1",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "recalled": 0,
+      "notes": "The response clearly defines Claude's role and specifies all three required sections, but uses markdown-style delimiters (**DECISIONS:**) instead of XML-style tags (<decisions>), failing the first criterion."
+    },
+    {
+      "task": "f1-2",
+      "family": "model_delimiters",
+      "weighted": 1.0,
+      "recalled": 1,
+      "notes": "Response fully meets all criteria: uses XML-style delimiters for all three categories, clearly defines the extraction task with specific rules, and explicitly specifies people, organizations, and locations."
+    },
+    {
+      "task": "f1-3",
+      "family": "model_delimiters",
+      "weighted": 1.0,
+      "recalled": 2,
+      "notes": "Response fully meets all criteria: uses XML-style tags for blocking/major/minor sections, clearly defines code reviewer role, and explicitly specifies all three severity levels."
+    },
+    {
+      "task": "f2-1",
+      "family": "json_verification",
+      "weighted": 0.5,
+      "recalled": 3,
+      "notes": "The prompt specifies all four required JSON fields with exact schema (1.0), provides clear handling for missing data using defaults (1.0), but lacks any self-verification step asking the model to check JSON validity before responding (0.0)."
+    },
+    {
+      "task": "f2-2",
+      "family": "json_verification",
+      "weighted": 1.0,
+      "recalled": 4,
+      "notes": "The prompt specifies all four required JSON fields with exact schema, includes explicit self-verification instruction before output, and constrains all field values with enums for category/urgency/sentiment plus length constraint for suggested_action."
+    },
+    {
+      "task": "f2-3",
+      "family": "json_verification",
+      "weighted": 1.0,
+      "recalled": 5,
+      "notes": "The prompt fully specifies the nested JSON schema with clear field constraints, includes explicit self-verification instructions before output, and properly handles the nested follow_up_items structure with owner and due_date fields."
+    },
+    {
+      "task": "f3-1",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "recalled": 5,
+      "notes": "The response includes 3 fully-realized examples with complete review text and labels (exceeding the minimum of 2), and covers all 3 classes (positive, negative, and neutral)."
+    },
+    {
+      "task": "f3-2",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "recalled": 5,
+      "notes": "The response includes 7 fully-realized examples with natural language questions and corresponding SQL queries, and demonstrates filtering (WHERE clauses), aggregation (COUNT, GROUP BY), sorting (ORDER BY), and limiting (LIMIT)."
+    },
+    {
+      "task": "f3-3",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "recalled": 5,
+      "notes": "The response includes 12 fully-realized examples with actual text inputs and corresponding ISO 639-1 codes, covering 12 different languages (English, French, Spanish, German, Italian, Portuguese, Russian, Japanese, Chinese, Korean, Turkish, Swedish)."
+    },
+    {
+      "task": "f1-1",
+      "family": "model_delimiters",
+      "weighted": 0.375,
+      "recalled": 0,
+      "notes": "The response uses markdown headers (##) instead of XML-style delimiters, clearly defines Claude's role as a meeting summarizer, and specifies all three required sections with detailed instructions."
+    },
+    {
+      "task": "f1-2",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "recalled": 1,
+      "notes": "Uses markdown headers instead of XML-style delimiters, but clearly defines the extraction task and specifies all three required categories."
+    },
+    {
+      "task": "f1-3",
+      "family": "model_delimiters",
+      "weighted": 1.0,
+      "recalled": 2,
+      "notes": "Response fully meets all criteria: uses XML-style tags for three severity sections, clearly defines code reviewer role, and explicitly specifies all three severity levels (blocking, major, minor)."
+    },
+    {
+      "task": "f2-1",
+      "family": "json_verification",
+      "weighted": 0.4,
+      "recalled": 3,
+      "notes": "Specifies exact JSON schema with all four fields clearly defined; lacks any self-verification step before responding; partially handles missing data by providing defaults but doesn't explicitly discuss null vs omitted field strategy."
+    },
+    {
+      "task": "f2-2",
+      "family": "json_verification",
+      "weighted": 1.0,
+      "recalled": 4,
+      "notes": "The prompt specifies all four required JSON fields with clear descriptions, includes an explicit self-verification step in requirement #5, and constrains all field values with enums for category, urgency, and sentiment."
+    },
+    {
+      "task": "f2-3",
+      "family": "json_verification",
+      "weighted": 0.91,
+      "recalled": 5,
+      "notes": "Schema is well-specified with clear structure and field types, though follow_up_items uses 'task' instead of the implied direct structure; includes explicit self-verification step before output; follow_up_items structure is detailed but uses 'task' field not mentioned in requirements and missing 'owner' and 'due_date' as top-level requirements."
+    },
+    {
+      "task": "f3-1",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "recalled": 5,
+      "notes": "The response includes 4 fully-realized examples with complete review text and labels, exceeding the requirement of 2, and covers all 3 classes (positive, negative, and neutral)."
+    },
+    {
+      "task": "f3-2",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "recalled": 5,
+      "notes": "The response includes 10 fully-realized examples with natural language questions and corresponding SQL queries, far exceeding the requirement of 2. The examples demonstrate filtering (WHERE clauses) along with multiple other SQL operations including COUNT, ORDER BY, LIMIT, GROUP BY, and LIKE pattern matching."
+    },
+    {
+      "task": "f3-3",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "recalled": 5,
+      "notes": "The response includes 18 fully-realized examples with actual text inputs and corresponding ISO 639-1 codes, far exceeding the requirement of 2 examples, and covers 18 different languages, far exceeding the requirement of 2 languages."
+    },
+    {
+      "task": "f1-1",
+      "family": "model_delimiters",
+      "weighted": 0.5,
+      "recalled": 0,
+      "notes": "The response clearly defines Claude's role and specifies all three required sections, but uses markdown-style delimiters (**DECISIONS:**) instead of XML-style tags (<decisions>), failing the first criterion."
+    },
+    {
+      "task": "f1-2",
+      "family": "model_delimiters",
+      "weighted": 1.0,
+      "recalled": 1,
+      "notes": "Response uses XML-style delimiters for all three categories, clearly defines the extraction task with specific rules, and explicitly specifies all three required categories (people, organizations, locations)."
+    },
+    {
+      "task": "f1-3",
+      "family": "model_delimiters",
+      "weighted": 1.0,
+      "recalled": 2,
+      "notes": "Response fully meets all criteria: uses XML-style tags for blocking/major/minor sections, clearly defines code reviewer role, and explicitly specifies all three severity levels."
+    },
+    {
+      "task": "f2-1",
+      "family": "json_verification",
+      "weighted": 0.4,
+      "recalled": 3,
+      "notes": "The prompt clearly specifies all four required JSON fields with their types, but lacks any self-verification step asking the model to validate the JSON before responding, and partially addresses missing data by providing default values rather than discussing null vs omitted approaches."
+    },
+    {
+      "task": "f2-2",
+      "family": "json_verification",
+      "weighted": 1.0,
+      "recalled": 4,
+      "notes": "The response fully specifies all four required JSON fields with exact schema, includes a comprehensive self-verification step in the validation section, and constrains all field values with explicit enums for category, urgency, and sentiment."
+    },
+    {
+      "task": "f2-3",
+      "family": "json_verification",
+      "weighted": 0.75,
+      "recalled": 5,
+      "notes": "Schema is fully specified with correct nesting and field types; verification step is mentioned but lacks concrete mechanism; follow_up_items structure is properly detailed with all required fields."
+    },
+    {
+      "task": "f3-1",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "recalled": 5,
+      "notes": "The response includes 4 fully-realized examples with concrete review text and labels (exceeds the minimum of 2), and covers all 3 classes (positive, negative, and neutral)."
+    },
+    {
+      "task": "f3-2",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "recalled": 5,
+      "notes": "The response includes 7 fully-realized examples with natural language questions and corresponding SQL queries, and demonstrates filtering (WHERE clauses) plus multiple other SQL operations including COUNT, GROUP BY, ORDER BY, LIMIT, and LIKE."
+    },
+    {
+      "task": "f3-3",
+      "family": "few_shot_concrete",
+      "weighted": 1.0,
+      "recalled": 5,
+      "notes": "The response includes 10 fully-realized examples with actual text inputs and corresponding ISO 639-1 codes, and covers 10 different languages (English, French, Spanish, German, Japanese, Russian, Chinese, Italian, Portuguese, Arabic), far exceeding both rubric requirements."
+    }
+  ]
+}
