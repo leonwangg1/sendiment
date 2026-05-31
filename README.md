@@ -24,7 +24,7 @@
 ---
 ## What Sediment is
 
-It's a memory-consolidation engine for AI agents, exposed primarily as an MCP server. The pitch: naive agent memory is append-only and rots — it accumulates near-duplicates, holds contradictory rules side-by-side, and never forgets stale heuristics, so over time the memory degrades the agent instead of improving it. Sediment fixes this by modeling memory on the brain's two consolidation processes.
+It's a memory-consolidation engine for AI agents, exposed primarily as an MCP server. Naive agent memory is append-only and rots — it accumulates near-duplicates, holds contradictory rules side-by-side, and never forgets stale heuristics, so over time the memory degrades the agent instead of improving it. Sediment fixes this by modeling memory on the brain's two consolidation processes.
 
 ## The problem
 
