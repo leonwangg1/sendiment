@@ -141,7 +141,7 @@ Wire into Claude Code via `.mcp.json`:
 }
 ```
 
-Drop the included `CLAUDE.md` in your project root and the agent will follow the loop discipline automatically.
+Drop the included `AGENT.md` in your project root and the agent will follow the loop discipline automatically.
 
 ---
 
